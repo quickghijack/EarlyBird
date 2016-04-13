@@ -64,6 +64,7 @@
 		7C0048841CBBDB870000CB87 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 7C0048821CBBDB870000CB87 /* sounds */; };
 		7C0048871CBD40D00000CB87 /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C0048851CBD40D00000CB87 /* LoadingScene.cpp */; };
 		7C974D371CBDEC5200D6C8B7 /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D351CBDEC5200D6C8B7 /* BackgroundLayer.cpp */; };
+		7C974D3D1CBE232E00D6C8B7 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -166,6 +167,8 @@
 		7C0048861CBD40D00000CB87 /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScene.h; sourceTree = "<group>"; };
 		7C974D351CBDEC5200D6C8B7 /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundLayer.cpp; sourceTree = "<group>"; };
 		7C974D361CBDEC5200D6C8B7 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WelcomeScene.cpp; sourceTree = "<group>"; };
+		7C974D3C1CBE232E00D6C8B7 /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -322,6 +325,8 @@
 				7C0048861CBD40D00000CB87 /* LoadingScene.h */,
 				7C974D351CBDEC5200D6C8B7 /* BackgroundLayer.cpp */,
 				7C974D361CBDEC5200D6C8B7 /* BackgroundLayer.h */,
+				7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */,
+				7C974D3C1CBE232E00D6C8B7 /* WelcomeScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -520,6 +525,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				7C974D371CBDEC5200D6C8B7 /* BackgroundLayer.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				7C974D3D1CBE232E00D6C8B7 /* WelcomeScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				7C00487E1CBBC0470000CB87 /* AtlasLoader.cpp in Sources */,
