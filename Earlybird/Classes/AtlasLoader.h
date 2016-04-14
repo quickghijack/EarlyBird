@@ -2,10 +2,10 @@
 //  AtlasLoader.h
 //  Earlybird
 //
-//  Created by 谢从 on 16/4/11.
+//  Created by zhe on 16/4/11.
 //
 //
-
+#pragma once
 #include "cocos2d.h"
 
 using namespace cocos2d;
@@ -17,10 +17,12 @@ typedef struct _atlas{
     int height;
     Point start;
     Point end;
-}Atlas;
+} Atlas;
 
 class AtlasLoader{
 public:
+    AtlasLoader();
+    ~AtlasLoader();
     //静态方法获取实例
     static AtlasLoader* getInstance();
     //静态方法删除实例
@@ -32,7 +34,7 @@ public:
     //得到精灵
     SpriteFrame* getSpriteFrameByName(string name);
 protected:
-    AtlasLoader();
+    
     virtual bool init();
     static AtlasLoader* shareAtlasLoader;
     Map<std::string, SpriteFrame*> _spriteFrame;

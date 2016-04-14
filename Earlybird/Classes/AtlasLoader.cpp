@@ -22,6 +22,8 @@ AtlasLoader* AtlasLoader::getInstance(){
     }
     return shareAtlasLoader;
 }
+AtlasLoader::AtlasLoader(){};
+AtlasLoader::~AtlasLoader(){};
 
 void AtlasLoader::destoryInstance(){
     CC_SAFE_DELETE(shareAtlasLoader);
