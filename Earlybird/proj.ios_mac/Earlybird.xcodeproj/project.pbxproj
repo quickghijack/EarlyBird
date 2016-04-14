@@ -65,6 +65,9 @@
 		7C0048871CBD40D00000CB87 /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C0048851CBD40D00000CB87 /* LoadingScene.cpp */; };
 		7C974D371CBDEC5200D6C8B7 /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D351CBDEC5200D6C8B7 /* BackgroundLayer.cpp */; };
 		7C974D3D1CBE232E00D6C8B7 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */; };
+		7C974D401CBF1E3000D6C8B7 /* WelcomeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D3E1CBF1E3000D6C8B7 /* WelcomeLayer.cpp */; };
+		7C974D431CBF215600D6C8B7 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D411CBF215600D6C8B7 /* GameScene.cpp */; };
+		7C974D461CBF218E00D6C8B7 /* BirdSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D441CBF218E00D6C8B7 /* BirdSprite.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -169,6 +172,12 @@
 		7C974D361CBDEC5200D6C8B7 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WelcomeScene.cpp; sourceTree = "<group>"; };
 		7C974D3C1CBE232E00D6C8B7 /* WelcomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScene.h; sourceTree = "<group>"; };
+		7C974D3E1CBF1E3000D6C8B7 /* WelcomeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WelcomeLayer.cpp; sourceTree = "<group>"; };
+		7C974D3F1CBF1E3000D6C8B7 /* WelcomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeLayer.h; sourceTree = "<group>"; };
+		7C974D411CBF215600D6C8B7 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		7C974D421CBF215600D6C8B7 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		7C974D441CBF218E00D6C8B7 /* BirdSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BirdSprite.cpp; sourceTree = "<group>"; };
+		7C974D451CBF218E00D6C8B7 /* BirdSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSprite.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -327,6 +336,12 @@
 				7C974D361CBDEC5200D6C8B7 /* BackgroundLayer.h */,
 				7C974D3B1CBE232E00D6C8B7 /* WelcomeScene.cpp */,
 				7C974D3C1CBE232E00D6C8B7 /* WelcomeScene.h */,
+				7C974D3E1CBF1E3000D6C8B7 /* WelcomeLayer.cpp */,
+				7C974D3F1CBF1E3000D6C8B7 /* WelcomeLayer.h */,
+				7C974D411CBF215600D6C8B7 /* GameScene.cpp */,
+				7C974D421CBF215600D6C8B7 /* GameScene.h */,
+				7C974D441CBF218E00D6C8B7 /* BirdSprite.cpp */,
+				7C974D451CBF218E00D6C8B7 /* BirdSprite.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -524,11 +539,14 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				7C974D371CBDEC5200D6C8B7 /* BackgroundLayer.cpp in Sources */,
+				7C974D401CBF1E3000D6C8B7 /* WelcomeLayer.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				7C974D3D1CBE232E00D6C8B7 /* WelcomeScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				7C974D461CBF218E00D6C8B7 /* BirdSprite.cpp in Sources */,
 				7C00487E1CBBC0470000CB87 /* AtlasLoader.cpp in Sources */,
+				7C974D431CBF215600D6C8B7 /* GameScene.cpp in Sources */,
 				7C0048871CBD40D00000CB87 /* LoadingScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

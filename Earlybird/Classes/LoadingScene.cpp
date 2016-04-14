@@ -37,7 +37,7 @@ void LoadingScene::LoadingCallBack(cocos2d::Texture2D *texture){
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_swooshing.ogg");
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_wing.ogg");
     
-    
-    TransitionScene* trans=TransitionFade::create(1, scene);
-    Director::getInstance()->replaceScene(trans);
+    //Scene* scene=WelcomeScene::create();
+    //TransitionScene* trans=TransitionFade::create(1, scene);
+    //Director::getInstance()->replaceScene(trans);
 };
