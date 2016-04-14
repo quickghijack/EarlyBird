@@ -45,3 +45,53 @@ bool BirdSprite::creatBird(){
         return false;
     }
 }
+
+Animation* BirdSprite::createAnimation(const char *fmt, int count, float fps){
+    Animation* animation=Animation::create();
+    animation->setDelayPerUnit(1/fps);
+    for (int i=0; i<count; i++) {
+        const char* fileName=String::createWithFormat(fmt,i)->getCString();
+        SpriteFrame *frame=AtlasLoader::getInstance()->getSpriteFrameByName(fileName);
+        animation->addSpriteFrame(frame);
+    }
+    return animation;
+}
+
+void BirdSprite::fly(){
+    if(changeState(ACTION_STATE_FLY)){
+        this->runAction(idleAction);
+        this->runAction(swingAction);
+    }
+}
+
+void BirdSprite::idle(){
+    if(changeState(ACTION_STATE_IDEL)){
+        this->stopAction(swingAction);
+        this->getPhysicsBody()->setGravityEnable(true);
+    }
+}
+
+void BirdSprite::die(){
+    if(changeState(ACTION_STATE_DIE)){
+        this->stopAllActions();
+    }
+    
+}
+
+bool BirdSprite::changeState(ActionState state){
+    this->currentStatus = state;
+    return true;
+}
+
+void BirdSprite::createBirdByRandom(){
+    if(this->isFirstTime & 1){
+        this->isFirstTime &= 2;
+    }else if(this->isFirstTime & 2){
+        this->isFirstTime &= 1;
+        return ;
+    }
+    
+    
+}
+
+
