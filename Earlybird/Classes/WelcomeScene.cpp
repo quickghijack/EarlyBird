@@ -8,8 +8,8 @@
 
 #include "WelcomeScene.h"
 
-WelcomeScene::WelcomeScene(){}
-WelcomeScene::~WelcomeScene(){}
+WelcomeScene::WelcomeScene(){};
+WelcomeScene::~WelcomeScene(){};
 
 bool WelcomeScene::init(){
     bool bRet=false;

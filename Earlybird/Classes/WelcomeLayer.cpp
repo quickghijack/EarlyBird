@@ -15,8 +15,8 @@ bool WelcomeLayer::init(){
     if(!Layer::init())
     {    return false;}
     
-    Size visableSize = Director::getInstance()->getVisibleSize();
-    Point orgin=Director::getInstance()->getVisibleOrigin();
+    Size visiableSize = Director::getInstance()->getVisibleSize();
+    Point origin=Director::getInstance()->getVisibleOrigin();
     
     time_t t=time(NULL);
     tm* lt=localtime(&t);
@@ -33,22 +33,22 @@ bool WelcomeLayer::init(){
     this->addChild(background);
     
     Sprite* title=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("title"));
-    title->setPosition(Point(orgin.x+visableSize.width/2,orgin.y+(visableSize.height*5)/7));
+    title->setPosition(Point(origin.x+visiableSize.width/2,origin.y+(visiableSize.height*5)/7));
     
     Sprite* startButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     Sprite* startActiveButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     startActiveButton->setPositionY(5);
     auto menuItem=MenuItemSprite::create(startButton, startActiveButton, CC_CALLBACK_1(WelcomeLayer::menuStartCallback, this));
-    menuItem->setPosition(Point(orgin.x + visableSize.width/2 ,orgin.y + visableSize.height*2/5));
+    menuItem->setPosition(Point(origin.x + visiableSize.width/2 ,origin.y + visiableSize.height*2/5));
     
     auto menu=Menu::create(menuItem, NULL);
-    menu->setPosition(Point(orgin.x+visableSize.width/2,orgin.y+visableSize.height*2/5));
+    menu->setPosition(Point(origin.x,origin.y));
     this->addChild(menu,1);
     
     this->bird=BirdSprite::getInstance();
     this->bird->creatBird();
     this->bird->setTag(BIRD_SPRITE_TAG);
-    this->bird->setPosition(Point(orgin.x+visableSize.width/2,orgin.y+visableSize.height*3/5-10));
+    this->bird->setPosition(Point(origin.x+visiableSize.width/2,origin.y+visiableSize.height*3/5-10));
     //this->bird->setPosition(Point::ZERO);
     this->bird->idle();
     this->addChild(this->bird);
@@ -67,7 +67,7 @@ bool WelcomeLayer::init(){
     
     Sprite* copyright=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("brand_copyright"));
     copyright->setAnchorPoint(Point::ZERO);
-    copyright->setPosition(Point(orgin.x + visableSize.width/2,orgin.y+visableSize.height/6));
+    copyright->setPosition(Point(origin.x + visiableSize.width/2,origin.y+visiableSize.height/6));
     this->addChild(copyright,10);
     
     return true;

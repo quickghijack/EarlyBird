@@ -5,7 +5,7 @@
 //  Created by on 16/4/12.
 //
 //
-
+#pragma once
 #include "LoadingScene.h"
 #include "WelcomeScene.h"
 LoadingScene::LoadingScene(){};

@@ -26,6 +26,10 @@ BirdSprite* BirdSprite::getInstance(){
 }
 
 bool BirdSprite::init(){
+    if(!initWithTexture(NULL, Rect::ZERO)){
+        return false;
+    }
+
     this->isFirstTime=3;
     return true;
 }

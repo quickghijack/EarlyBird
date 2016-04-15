@@ -5,7 +5,7 @@
 //  Created by zhe on 16/4/14.
 //
 //
-
+#pragma once
 #ifndef WelcomeLayer_hpp
 #define WelcomeLayer_hpp
 
