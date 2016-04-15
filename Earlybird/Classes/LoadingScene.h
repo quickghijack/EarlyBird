@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "AtlasLoader.h"
 #include "SimpleAudioEngine.h"
+#include "HelloWorldScene.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -23,7 +24,7 @@ public:
     LoadingScene();
     ~LoadingScene();
     
-    virtual bool init();
+    virtual bool init() override;
     CREATE_FUNC(LoadingScene);
     
     void onEnter() override;

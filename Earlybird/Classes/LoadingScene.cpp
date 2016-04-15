@@ -19,11 +19,15 @@ bool LoadingScene::init(){
 void LoadingScene::onEnter(){
     //add backgroud to this scene
     Sprite *background = Sprite::create("image/splash.png");
+    
     Size visableSize=Director::getInstance()->getVisibleSize();
     Point origin=Director::getInstance()->getVisibleOrigin();
     background->setPosition(origin.x+visableSize.width/2,origin.y+visableSize.height/2);
     this->addChild(background);
-    
+    //Scene* scene=HelloWorld::createScene();
+    //Director::getInstance()->replaceScene(scene);
+    //Texture2D* texture = Director::getInstance()->getTextureCache()->addImage("image/atlas.png");
+    //LoadingCallBack(texture);
     Director::getInstance()->getTextureCache()->addImageAsync("image/atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
     
 };
@@ -31,13 +35,13 @@ void LoadingScene::onEnter(){
 void LoadingScene::LoadingCallBack(cocos2d::Texture2D *texture){
     AtlasLoader::getInstance()->loadAtlas("image/atlas.txt", texture);
     
-    SimpleAudioEngine::getInstance()->preloadEffect("sfx_die.ogg");
-    SimpleAudioEngine::getInstance()->preloadEffect("sfx_hit.ogg");
-    SimpleAudioEngine::getInstance()->preloadEffect("sfx_point.ogg");
-    SimpleAudioEngine::getInstance()->preloadEffect("sfx_swooshing.ogg");
-    SimpleAudioEngine::getInstance()->preloadEffect("sfx_wing.ogg");
+    SimpleAudioEngine::getInstance()->preloadEffect("sound/sfx_die.ogg");
+    SimpleAudioEngine::getInstance()->preloadEffect("sound/sfx_hit.ogg");
+    SimpleAudioEngine::getInstance()->preloadEffect("sound/sfx_point.ogg");
+    SimpleAudioEngine::getInstance()->preloadEffect("sound/sfx_swooshing.ogg");
+    SimpleAudioEngine::getInstance()->preloadEffect("sound/sfx_wing.ogg");
     
-    //Scene* scene=WelcomeScene::create();
-    //TransitionScene* trans=TransitionFade::create(1, scene);
-    //Director::getInstance()->replaceScene(trans);
+    Scene* scene=HelloWorld::createScene();
+    TransitionScene* trans=TransitionFade::create(1, scene);
+    Director::getInstance()->replaceScene(trans);
 };

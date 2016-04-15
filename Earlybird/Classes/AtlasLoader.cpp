@@ -54,8 +54,9 @@ void AtlasLoader::loadAtlas(string fileName, cocos2d::Texture2D *texture){
         atlas.end.y=1024*atlas.end.y;
         //next
         pos = data.find_first_of("\n");
-        string line=data.substr(0,pos);
-        
+        //string line=data.substr(0,pos);
+        line = data.substr(0, pos);
+        data = data.substr(pos + 1);
         //fix bug
         if(atlas.name == string("land")) {
             atlas.start.x += 1;
