@@ -16,6 +16,7 @@
 #include "SimpleAudioEngine.h"
 #include "BirdSprite.h"
 
+using namespace CocosDenshion;
 using namespace cocos2d;
 using namespace std;
 

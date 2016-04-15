@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;::operator=(char const*) [inlined]:string">
+      </ContextState>
+      <ContextState
+         contextName = "WelcomeLayer::init():WelcomeLayer.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::TrianglesCommand::init(float, unsigned int, cocos2d::GLProgramState*, cocos2d::BlendFunc, cocos2d::TrianglesCommand::Triangles const&amp;, cocos2d::Mat4 const&amp;, unsigned int):CCTrianglesCommand.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::TextureCache::addImageAsyncCallBack(float):CCTextureCache.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

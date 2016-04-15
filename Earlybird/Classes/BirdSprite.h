@@ -20,7 +20,7 @@ typedef enum{
     ACTION_STATE_FLY,
     ACTION_STATE_DIE
 }ActionState;
-
+const int BIRD_SPRITE_TAG = 10003;
 class BirdSprite:public Sprite{
 public:
     BirdSprite();

@@ -32,6 +32,8 @@ bool BirdSprite::init(){
 
 bool BirdSprite::creatBird(){
     this->createBirdByRandom();
+    
+    
     if(Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName(this->birdName))){
         Animation* animation = this->createAnimation(this->birdNameFormat.c_str(), 3, 10);
         Animate* animate=Animate::create(animation);
@@ -57,14 +59,14 @@ Animation* BirdSprite::createAnimation(const char *fmt, int count, float fps){
     return animation;
 }
 
-void BirdSprite::fly(){
+void BirdSprite::idle(){
     if(changeState(ACTION_STATE_FLY)){
         this->runAction(idleAction);
         this->runAction(swingAction);
     }
 }
 
-void BirdSprite::idle(){
+void BirdSprite::fly(){
     if(changeState(ACTION_STATE_IDEL)){
         this->stopAction(swingAction);
         this->getPhysicsBody()->setGravityEnable(true);
@@ -84,31 +86,31 @@ bool BirdSprite::changeState(ActionState state){
 }
 
 void BirdSprite::createBirdByRandom(){
-    if(this->isFirstTime & 1){
-        this->isFirstTime &= 2;
-    }else if(this->isFirstTime & 2){
-        this->isFirstTime &= 1;
-        return ;
-    }
+//    if(this->isFirstTime & 1){
+//        this->isFirstTime &= 2;
+//    }else if(this->isFirstTime & 2){
+//        this->isFirstTime &= 1;
+//        return ;
+//    }
     
     srand((unsigned) time(NULL));
     int type=((int)rand())%3;
     switch (type) {
-        case 1:
+        case 0:
             this->birdName="bird0_0";
             this->birdNameFormat="bird0_%d";
             break;
-        case 2:
+        case 1:
             this->birdName="bird1_0";
             this->birdNameFormat="bird1_%d";
             break;
-        case 3:
+        case 2:
             this->birdName="bird2_0";
             this->birdNameFormat="bird2_%d";
             break;
         default:
-            this->birdName="bird3_0";
-            this->birdNameFormat="bird3_%d";
+            this->birdName="bird2_0";
+            this->birdNameFormat="bird2_%d";
             break;
     }
 }
