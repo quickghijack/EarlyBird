@@ -5,7 +5,7 @@
 //  Created by 谢从 on 16/4/11.
 //
 //
-
+#pragma once
 #include "cocos2d.h"
 
 using namespace cocos2d;
@@ -31,8 +31,10 @@ public:
     void loadAtlas(string fileName, Texture2D *texture);
     //得到精灵
     SpriteFrame* getSpriteFrameByName(string name);
-protected:
     AtlasLoader();
+    ~AtlasLoader();
+protected:
+    
     virtual bool init();
     static AtlasLoader* shareAtlasLoader;
     Map<std::string, SpriteFrame*> _spriteFrame;

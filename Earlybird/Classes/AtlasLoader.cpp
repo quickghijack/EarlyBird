@@ -9,6 +9,8 @@
 #include "AtlasLoader.h"
 
 AtlasLoader* AtlasLoader::shareAtlasLoader=nullptr;
+AtlasLoader::~AtlasLoader(){};
+AtlasLoader::AtlasLoader(){};
 
 AtlasLoader* AtlasLoader::getInstance(){
     if (shareAtlasLoader==NULL){
