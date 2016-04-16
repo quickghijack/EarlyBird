@@ -44,60 +44,28 @@ void AtlasLoader::loadAtlas(string fileName, cocos2d::Texture2D *texture){
     Atlas atlas;
     pos = data.find_first_of("\n");
     string line=data.substr(0,pos);
-//    while(line!=""){
-//        sscanf(line.c_str(), "%s %d %d %f %f %f %f",&atlas.name,
-//        &atlas.width,&atlas.height,&atlas.start.x,&atlas.start.y,
-//               &atlas.end.x,&atlas.end.y);
-//        atlas.start.x=1024*atlas.start.x;
-//        atlas.start.y=1024*atlas.start.y;
-//        atlas.end.x=1024*atlas.end.x;
-//        atlas.end.y=1024*atlas.end.y;
-//        //next
-//        pos = data.find_first_of("\n");
-//        //string line=data.substr(0,pos);
-//        line = data.substr(0, pos);
-//        data = data.substr(pos + 1);
-//        //fix bug
-//        if(atlas.name == string("land")) {
-//            atlas.start.x += 1;
-//        }
-//        Rect rect =Rect(atlas.start.x, atlas.start.y, atlas.width, atlas.height);
-//        auto frame=SpriteFrame::createWithTexture(texture, rect);
-//        this->_spriteFrame.insert(string(atlas.name), frame);
-//    }
-//
-    
-    while (line.length() > 0) {
-        sscanf(line.c_str(), "%s %d %d %f %f %f %f",
-               atlas.name,
-               &atlas.width,
-               &atlas.height,
-               &atlas.start.x,
-               &atlas.start.y,
-               &atlas.end.x,
-               &atlas.end.y);
-        
-        atlas.start.x *= 1024;
-        atlas.start.y *= 1024;
-        atlas.end.x *= 1024;
-        atlas.end.y *= 1024;
-        
-        // 读取下一行
+    while(line!=""){
+        sscanf(line.c_str(), "%s %d %d %f %f %f %f",&atlas.name,
+        &atlas.width,&atlas.height,&atlas.start.x,&atlas.start.y,
+               &atlas.end.x,&atlas.end.y);
+        atlas.start.x=1024*atlas.start.x;
+        atlas.start.y=1024*atlas.start.y;
+        atlas.end.x=1024*atlas.end.x;
+        atlas.end.y=1024*atlas.end.y;
+        //next
         pos = data.find_first_of("\n");
+        //string line=data.substr(0,pos);
         line = data.substr(0, pos);
         data = data.substr(pos + 1);
-        
-        // fix 1px edge bug
-        if (atlas.name == std::string("land")) {
-            ++atlas.start.x;
+        //fix bug
+        if(atlas.name == string("land")) {
+            atlas.start.x += 1;
         }
-        
-        
-        // use the data to create a sprite frame
-        Rect rect = Rect(atlas.start.x, atlas.start.y, atlas.width, atlas.height);
-        auto spriteFrame = SpriteFrame::createWithTexture(texture, rect);
-        _spriteFrame.insert(std::string(atlas.name), spriteFrame);
+        Rect rect =Rect(atlas.start.x, atlas.start.y, atlas.width, atlas.height);
+        auto frame=SpriteFrame::createWithTexture(texture, rect);
+        this->_spriteFrame.insert(string(atlas.name), frame);
     }
+    
 }
 
 SpriteFrame* AtlasLoader::getSpriteFrameByName(string name){

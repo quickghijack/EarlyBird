@@ -1,5 +1,4 @@
 #include "HelloWorldScene.h"
-#include "AtlasLoader.h"
 
 USING_NS_CC;
 
@@ -65,26 +64,13 @@ bool HelloWorld::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    //auto sprite = Sprite::create("image/splash.png");
+    auto sprite = Sprite::create("image/splash.png");
 
     // position the sprite on the center of the screen
-    //sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     // add the sprite as a child to this layer
-    //this->addChild(sprite, 0);
-    
-    Rect rect=Rect(0.0, 0.0, 200, 520);
-    Texture2D* text1=Director::getInstance()->getTextureCache()->addImage("image/atlas.png");
-    //SpriteFrame* frame = SpriteFrame::createWithTexture(text1, rect);
-    //Sprite* test= Sprite::createWithSpriteFrame(frame);
-    Sprite* test = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("bird0_0"));
-    
-    //Sprite* test=Sprite::create("image/atlas.png");
-    //Sprite* test = Sprite::create("image/atlas.png",rect);
-    test->setPosition(Vec2(origin.x ,origin.y));
-    test->setAnchorPoint(Point(0,0));
-    //this->addChild(test);
-    HelloWorld::addChild(test,1);
+    this->addChild(sprite, 0);
     
     return true;
 }
