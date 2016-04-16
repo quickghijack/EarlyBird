@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/BirdSprite.cpp"
-            timestampString = "482503336.547182"
+            timestampString = "482427971.700402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "BirdSprite::creatBird()"
             landmarkType = "5">
          </BreakpointContent>
@@ -133,6 +133,25 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/BirdSprite.cpp"
+            timestampString = "482427971.700402"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "BirdSprite::fly()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+>>>>>>> parent of 78393f6... it is an error change
             shouldBeEnabled = "No"
 =======
             shouldBeEnabled = "Yes"

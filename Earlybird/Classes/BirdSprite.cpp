@@ -29,6 +29,10 @@ bool BirdSprite::init(){
     if(!initWithTexture(NULL, Rect::ZERO)){
         return false;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 78393f6... it is an error change
     this->isFirstTime=3;
     return true;
 }
