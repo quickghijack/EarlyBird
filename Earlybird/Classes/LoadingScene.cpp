@@ -5,7 +5,7 @@
 //  Created by on 16/4/12.
 //
 //
-#pragma once
+
 #include "LoadingScene.h"
 #include "WelcomeScene.h"
 LoadingScene::LoadingScene(){};
@@ -25,6 +25,10 @@ void LoadingScene::onEnter(){
     background->setPosition(origin.x+visableSize.width/2,origin.y+visableSize.height/2);
     this->addChild(background);
     
+//    Texture2D* text = Director::getInstance()->getTextureCache()->addImage("image/atlas.png");
+//    AtlasLoader::getInstance()->loadAtlas("image/atlas.txt", text);
+//    Scene* scene=HelloWorld::createScene();
+//    Director::getInstance()->replaceScene(scene);
     Director::getInstance()->getTextureCache()->addImageAsync("image/atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
     
 };
@@ -37,8 +41,9 @@ void LoadingScene::LoadingCallBack(cocos2d::Texture2D *texture){
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_point.ogg");
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_swooshing.ogg");
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_wing.ogg");
-    
+    //Scene* scene=HelloWorld::createScene();
     Scene* scene=WelcomeScene::create();
     TransitionScene* trans=TransitionFade::create(1, scene);
     Director::getInstance()->replaceScene(trans);
+    
 };

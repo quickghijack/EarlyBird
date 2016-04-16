@@ -29,7 +29,7 @@ bool WelcomeLayer::init(){
         background=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("bg_night"));
     }
     background->setAnchorPoint(Point::ZERO);
-    background->setPosition(Point::ZERO);
+    background->setPosition(Point(origin.x,origin.y));
     this->addChild(background);
     
     Sprite* title=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("title"));
@@ -37,7 +37,7 @@ bool WelcomeLayer::init(){
     
     Sprite* startButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     Sprite* startActiveButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
-    startActiveButton->setPositionY(5);
+    startActiveButton->setPositionY(-5);
     auto menuItem=MenuItemSprite::create(startButton, startActiveButton, CC_CALLBACK_1(WelcomeLayer::menuStartCallback, this));
     menuItem->setPosition(Point(origin.x + visiableSize.width/2 ,origin.y + visiableSize.height*2/5));
     
@@ -49,7 +49,7 @@ bool WelcomeLayer::init(){
     this->bird->creatBird();
     this->bird->setTag(BIRD_SPRITE_TAG);
     this->bird->setPosition(Point(origin.x+visiableSize.width/2,origin.y+visiableSize.height*3/5-10));
-    //this->bird->setPosition(Point::ZERO);
+    
     this->bird->idle();
     this->addChild(this->bird);
     //add land
@@ -63,12 +63,12 @@ bool WelcomeLayer::init(){
     land2->setPosition(this->land1->getContentSize().width-2.0f,0);
     this->addChild(land2);
     
-    this->schedule(schedule_selector(WelcomeLayer::scrollLand), 0.01f);
+    this->schedule(schedule_selector(WelcomeLayer::scrollLand), 0.02f);
     
     Sprite* copyright=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("brand_copyright"));
     copyright->setAnchorPoint(Point::ZERO);
     copyright->setPosition(Point(origin.x + visiableSize.width/2,origin.y+visiableSize.height/6));
-    this->addChild(copyright,10);
+    this->addChild(copyright);
     
     return true;
 }
