@@ -184,6 +184,9 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
+<<<<<<< HEAD
+>>>>>>> parent of 28fecf0... fix the problem sprite can't  be location
+=======
 >>>>>>> parent of 28fecf0... fix the problem sprite can't  be location
             ignoreCount = "0"
             continueAfterRunningActions = "No"

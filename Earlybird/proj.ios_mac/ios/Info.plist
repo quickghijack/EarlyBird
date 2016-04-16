@@ -10,6 +10,8 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon-57.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.Earlybird</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-29</string>
@@ -46,8 +48,6 @@
 		<string>Icon-152</string>
 		<string>Icon-180</string>
 	</array>
-	<key>CFBundleIdentifier</key>
-	<string>com.Earlybird</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -68,8 +68,13 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
+<<<<<<< HEAD
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+=======
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+>>>>>>> parent of 28fecf0... fix the problem sprite can't  be location
 	</array>
 </dict>
 </plist>
