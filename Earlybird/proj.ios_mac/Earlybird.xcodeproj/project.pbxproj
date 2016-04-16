@@ -77,6 +77,7 @@
 		7C974D651CC07C4E00D6C8B7 /* sfx_wing.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 7C974D601CC07C4E00D6C8B7 /* sfx_wing.ogg */; };
 		7C974D691CC07C7200D6C8B7 /* arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C974D671CC07C7200D6C8B7 /* arial.ttf */; };
 		7C974D6A1CC07C7200D6C8B7 /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C974D681CC07C7200D6C8B7 /* Marker Felt.ttf */; };
+		7C974D6F1CC2639900D6C8B7 /* zhengsd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C974D6E1CC2639900D6C8B7 /* zhengsd.jpg */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -198,6 +199,7 @@
 		7C974D601CC07C4E00D6C8B7 /* sfx_wing.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = sfx_wing.ogg; path = sounds/sfx_wing.ogg; sourceTree = "<group>"; };
 		7C974D671CC07C7200D6C8B7 /* arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = arial.ttf; path = fonts/arial.ttf; sourceTree = "<group>"; };
 		7C974D681CC07C7200D6C8B7 /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Marker Felt.ttf"; path = "fonts/Marker Felt.ttf"; sourceTree = "<group>"; };
+		7C974D6E1CC2639900D6C8B7 /* zhengsd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = zhengsd.jpg; path = ../../../zhengsd.jpg; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -417,6 +419,7 @@
 		7C974D4A1CC07BF300D6C8B7 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				7C974D6E1CC2639900D6C8B7 /* zhengsd.jpg */,
 				7C974D4B1CC07C2600D6C8B7 /* 1257355888.png */,
 				7C974D4C1CC07C2600D6C8B7 /* atlas.png */,
 				7C974D4D1CC07C2600D6C8B7 /* atlas.txt */,
@@ -586,6 +589,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				7C974D571CC07C2600D6C8B7 /* Screenshot_2014-03-08-15-04-19.png in Resources */,
+				7C974D6F1CC2639900D6C8B7 /* zhengsd.jpg in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
