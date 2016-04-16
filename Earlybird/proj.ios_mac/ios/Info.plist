@@ -68,13 +68,7 @@
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-<<<<<<< HEAD
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-=======
-		<string>UIInterfaceOrientationLandscapeRight</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
->>>>>>> parent of 28fecf0... fix the problem sprite can't  be location
+
 	</array>
 </dict>
 </plist>

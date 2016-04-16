@@ -20,9 +20,9 @@ void LoadingScene::onEnter(){
     //add backgroud to this scene
     Sprite *background = Sprite::create("image/splash.png");
     
-    Size visableSize=Director::getInstance()->getVisibleSize();
+    Size visiableSize=Director::getInstance()->getVisibleSize();
     Point origin=Director::getInstance()->getVisibleOrigin();
-    background->setPosition(origin.x+visableSize.width/2,origin.y+visableSize.height/2);
+    background->setPosition(origin.x+visiableSize.width/2,origin.y+visiableSize.height/2);
     this->addChild(background);
     
     Director::getInstance()->getTextureCache()->addImageAsync("image/atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
