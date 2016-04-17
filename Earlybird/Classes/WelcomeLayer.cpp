@@ -67,7 +67,7 @@ bool WelcomeLayer::init(){
     
     Sprite* copyright=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("brand_copyright"));
     copyright->setAnchorPoint(Point::ZERO);
-    copyright->setPosition(Point(origin.x + visiableSize.width/2,origin.y+visiableSize.height/6));
+    copyright->setPosition(Point(origin.x + visiableSize.width/2,origin.y+visiableSize.height/7));
     this->addChild(copyright,10);
     
     return true;
