@@ -37,7 +37,7 @@ bool WelcomeLayer::init(){
     
     Sprite* startButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     Sprite* startActiveButton=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
-    startActiveButton->setPositionY(5);
+    startActiveButton->setPositionY(-5);
     auto menuItem=MenuItemSprite::create(startButton, startActiveButton, CC_CALLBACK_1(WelcomeLayer::menuStartCallback, this));
     menuItem->setPosition(Point(origin.x + visiableSize.width/2 ,origin.y + visiableSize.height*2/5));
     
@@ -66,7 +66,7 @@ bool WelcomeLayer::init(){
     this->schedule(schedule_selector(WelcomeLayer::scrollLand), 0.01f);
     
     Sprite* copyright=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("brand_copyright"));
-    copyright->setAnchorPoint(Point::ZERO);
+    copyright->setAnchorPoint(Point(0.5,0.5));
     copyright->setPosition(Point(origin.x + visiableSize.width/2,origin.y+visiableSize.height/7));
     this->addChild(copyright,10);
     
