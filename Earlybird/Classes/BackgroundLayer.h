@@ -15,6 +15,7 @@ using namespace cocos2d;
 using namespace std;
 
 class BackgroundLayer:public Layer{
+public:
     BackgroundLayer();
     ~BackgroundLayer();
     virtual bool init();

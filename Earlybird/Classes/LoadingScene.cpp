@@ -26,7 +26,6 @@ void LoadingScene::onEnter(){
     this->addChild(background);
     
     Director::getInstance()->getTextureCache()->addImageAsync("image/atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
-    
 };
 
 void LoadingScene::LoadingCallBack(cocos2d::Texture2D *texture){

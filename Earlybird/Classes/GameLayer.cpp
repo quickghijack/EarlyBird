@@ -5,26 +5,146 @@
 //  Created by zhe on 16/4/17.
 //
 //
-#pragma once
-#include "cocos2d.h"
-#include "UserRecord.h"
-#include "OptionLayer.h"
-#include "BirdSprite.h"
-#include "BackgroundLayer.h"
-#include "AtlasLoader.h"
-#include "SimpleAudioEngine.h"
-#include <cstdlib>
 
-using namespace cocos2d;
-using namespace CocosDenshion;
-using namespace std;
 
-#define MIN(X,Y) ((X)<(Y)?(X):(Y))
-#define MAX(X,Y) ((X)>(Y)?(X):(Y))
+#include "GameLayer.h"
 
-const int UP_PIP=21;
-const int DOWN_PIP=12;
-const int PIP_PASS = 30;
-const int PIP_NEW=31;
+GameLayer::GameLayer(){};
+GameLayer::~GameLayer(){};
 
-const int BIRD_RADIUS = 15;
+bool GameLayer::init(){
+    if(Layer::init()){
+        Size visiableSize=Director::getInstance()->getVisibleSize();
+        Point origin = Director::getInstance()->getVisibleOrigin();
+        
+        this->gameStatus=GAME_STATUS_READY;
+        this->score=0;
+        
+        //add bird
+        this->bird=BirdSprite::getInstance();
+        this->bird->creatBird();
+        //physics config
+        PhysicsBody *body = PhysicsBody::create();
+        body->addShape(PhysicsShapeCircle::create(BIRD_RADIUS));
+        //设置类别
+        body->setCategoryBitmask(ColliderTypeBird);
+        //允许相撞（与运算为与两个物体都能发生碰撞）
+        body->setCollisionBitmask(ColliderTypePip&ColliderTypeLand);
+        body->setContactTestBitmask(ColliderTypeLand|ColliderTypePip);
+        
+        body->setDynamic(true);
+        //调整线性阻尼
+        body->setLinearDamping(0.0f);
+        body->setGravityEnable(false);
+        
+        this->bird->setPhysicsBody(body);
+        this->bird->setPosition(origin.x + visiableSize.width*1/3 - 5,origin.y + visiableSize.height/2 + 5);
+        this->bird->idle();
+        this->addChild(this->bird);
+        
+        //add ground
+        this->groundNode = Node::create();
+        float landHeight = BackgroundLayer::getLandHeight();
+        auto groundBody = PhysicsBody::create();
+        groundBody->addShape(PhysicsShapeBox::create(Size(288, landHeight)));
+        groundBody->setDynamic(false);
+        groundBody->setLinearDamping(0.0f);
+        groundBody->setCategoryBitmask(ColliderTypeLand);
+        groundBody->setCollisionBitmask(ColliderTypeBird);
+        groundBody->setContactTestBitmask(ColliderTypeBird);
+        this->groundNode->setPhysicsBody(groundBody);
+        this->groundNode->setPosition(144,landHeight/2);
+        this->addChild(this->groundNode);
+        
+        //add land
+        this->landSprite1=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("land"));
+        this->landSprite1->setPosition(Point::ZERO);
+        this->landSprite1->setAnchorPoint(Point::ZERO);
+        this->addChild(landSprite1,30);
+        
+        this->landSprite2=Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("land"));
+        this->landSprite2->setAnchorPoint(Point::ZERO);
+        this->landSprite2->setPosition(Point(origin.x+landSprite1->getContentSize().width-2.0f,0));
+        this->addChild(landSprite2,30);
+        
+        this->shiftLand = schedule_selector(GameLayer::scrollLand);
+        this->schedule(shiftLand, 0.02f);
+        
+        this->scheduleUpdate();
+        
+        //碰撞事件
+        auto contactListener = EventListenerPhysicsContact::create();
+        contactListener->onContactBegin=CC_CALLBACK_1(GameLayer::onContactBegin, this);
+        this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+
+bool GameLayer::onContactBegin(cocos2d::PhysicsContact &contact){
+    this->gameOver();
+    return true;
+}
+
+void GameLayer::scrollLand(float dt){
+    this->landSprite1->setPositionX(this->landSprite1->getPositionX()-2.0f);
+    this->landSprite2->setPositionX(this->landSprite1->getPositionX()+this->landSprite1->getContentSize().width-2.0f);
+    if(landSprite2->getPositionX()==0){
+        landSprite1->setPositionX(0);
+    }
+    
+    //move pip
+    //like foreach (auto singlePip in pips)
+    for(auto singlePip:this->pips){
+        singlePip->setPositionX(singlePip->getPositionX()-2);
+        if(singlePip->getPositionX()<-PIP_WIDTH){
+            singlePip->setTag(PIP_NEW);
+            Size visiableSize = Director::getInstance()->getVisibleSize();
+            singlePip->setPositionX(visiableSize.width);
+            singlePip->setPositionY(this->getRandomHeight());
+        }
+    }
+    
+}
+
+void GameLayer::onTouch(){
+    if (this->gameStatus==GAME_STATUS_OVER){
+        return;
+    }
+    
+    SimpleAudioEngine::getInstance()->playEffect("sfx_wing.ogg");
+    
+    if(this->gameStatus==GAME_STATUS_READY){
+        this->delegator->onGameStart();
+        this->bird->fly();
+        this->gameStatus=GAME_STATUS_START;
+        this->createPips();
+    }else if(gameStatus==GAME_STATUS_START){
+            this->bird->getPhysicsBody()->setVelocity(Vect(0,260));
+        }
+}
+
+void GameLayer::rotateBird(){
+    float vertialSpeed = this->bird->getPhysicsBody()->getVelocity().y;
+    this->bird->setRotation(-min(max(-90, vertialSpeed*0.2+60), 30));
+}
+
+
+void GameLayer::update(float delta){
+    if(this->gameStatus==GAME_STATUS_START){
+        rotateBird();
+        checkHit();
+    }
+}
+
+void GameLayer::createPips(){
+    for(int i=0;i<PIP_COUNT;i++){
+        Size visiableSize = Director::getInstance()->getVisibleSize();
+        Sprite* pipUp = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("pipe_up"));
+        Sprite* pipDown = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("pipe_down"));
+        Node* singlePip=Node::create();
+        //bind to pair
+}
