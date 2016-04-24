@@ -29,6 +29,7 @@ const int UP_PIP=21;
 const int DOWN_PIP=12;
 const int PIP_PASS = 30;
 const int PIP_NEW=31;
+const int PIP_INTERVAL = 180;
 
 const int BIRD_RADIUS = 15;
 const int PIP_HEIGHT = 320;
@@ -56,7 +57,7 @@ public:
     ~StatusDelegate();
     virtual void onGameStart(void)=0;
     virtual void onGamePlaying(int score)=0;
-    virtual void onGameOver(int curSorce,int bestSorce)=0;
+    virtual void onGameEnd(int curSorce,int bestSorce)=0;
     
 };
 

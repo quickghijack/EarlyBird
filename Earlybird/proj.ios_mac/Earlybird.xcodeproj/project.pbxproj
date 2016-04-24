@@ -80,6 +80,8 @@
 		7C974D7A1CC3AF2F00D6C8B7 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D781CC3AF2F00D6C8B7 /* GameLayer.cpp */; };
 		7C974D7D1CC3B09A00D6C8B7 /* UserRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D7B1CC3B09A00D6C8B7 /* UserRecord.cpp */; };
 		7C974D801CC472C700D6C8B7 /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D7E1CC472C700D6C8B7 /* OptionLayer.cpp */; };
+		7C974D831CC776D500D6C8B7 /* StatusLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D811CC776D500D6C8B7 /* StatusLayer.cpp */; };
+		7C974D861CC7774000D6C8B7 /* Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C974D841CC7774000D6C8B7 /* Number.cpp */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -207,6 +209,10 @@
 		7C974D7C1CC3B09A00D6C8B7 /* UserRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRecord.h; sourceTree = "<group>"; };
 		7C974D7E1CC472C700D6C8B7 /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
 		7C974D7F1CC472C700D6C8B7 /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
+		7C974D811CC776D500D6C8B7 /* StatusLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatusLayer.cpp; sourceTree = "<group>"; };
+		7C974D821CC776D500D6C8B7 /* StatusLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusLayer.h; sourceTree = "<group>"; };
+		7C974D841CC7774000D6C8B7 /* Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Number.cpp; sourceTree = "<group>"; };
+		7C974D851CC7774000D6C8B7 /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Number.h; sourceTree = "<group>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -377,6 +383,10 @@
 				7C974D7C1CC3B09A00D6C8B7 /* UserRecord.h */,
 				7C974D7E1CC472C700D6C8B7 /* OptionLayer.cpp */,
 				7C974D7F1CC472C700D6C8B7 /* OptionLayer.h */,
+				7C974D811CC776D500D6C8B7 /* StatusLayer.cpp */,
+				7C974D821CC776D500D6C8B7 /* StatusLayer.h */,
+				7C974D841CC7774000D6C8B7 /* Number.cpp */,
+				7C974D851CC7774000D6C8B7 /* Number.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -625,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				7C974D831CC776D500D6C8B7 /* StatusLayer.cpp in Sources */,
 				7C974D371CBDEC5200D6C8B7 /* BackgroundLayer.cpp in Sources */,
 				7C974D401CBF1E3000D6C8B7 /* WelcomeLayer.cpp in Sources */,
 				7C974D801CC472C700D6C8B7 /* OptionLayer.cpp in Sources */,
@@ -637,6 +648,7 @@
 				7C00487E1CBBC0470000CB87 /* AtlasLoader.cpp in Sources */,
 				7C974D431CBF215600D6C8B7 /* GameScene.cpp in Sources */,
 				7C0048871CBD40D00000CB87 /* LoadingScene.cpp in Sources */,
+				7C974D861CC7774000D6C8B7 /* Number.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				7C974D7D1CC3B09A00D6C8B7 /* UserRecord.cpp in Sources */,
 			);
