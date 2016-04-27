@@ -29,6 +29,7 @@ bool BackgroundLayer::init(){
     
     background->setAnchorPoint(Point::ZERO);
     background->setPosition(Point::ZERO);
+    this->addChild(background);
     return true;
     
 };

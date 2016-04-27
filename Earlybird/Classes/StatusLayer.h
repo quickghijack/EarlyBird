@@ -6,24 +6,24 @@
 //
 //
 
-#ifndef StatusLayer_hpp
-#define StatusLayer_hpp
 
+#pragma once
 #include "cocos2d.h"
 #include "AtlasLoader.h"
 #include "GameLayer.h"
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "Number.h"
+#include <cstdlib>
 
-#include <stdio.h>
+
 
 using namespace cocos2d;
 using namespace std;
 using namespace CocosDenshion;
 
 const string NUMBER_SCORE="number_score";
-const string FONT = "font";
+const string NUMBER_FONT = "font";
 const int CURRENT_SCORE_SPRITE_TAG = 10001;
 
 class StatusLayer : public Layer, public StatusDelegate{
@@ -40,7 +40,26 @@ private:
     void showStartStatus();
     void showOverStatus(int curScore,int bestScore);
     void loadWhiteSprite();
-    
+    void blinkFullScreen();
+    void fadeInGameOver();
+    void jumpToScrorePanel();
+    void fadeInRestBtn();
+    void refrenceScoreCallBack();
+    void refrenceScoreExecutor(float dt);
+    string getMedalName(int score);
+    Sprite* blink;
+    void setBlinkSprite();
+    void blinkAction();
+    void menuRestartCallBack(Ref * sender);
+    Sprite* scoreSprite;
+    Sprite* getReadySprite;
+    Sprite* tutorialSprite;
+    Sprite* whiteSprite;
+    int currentScore;
+    int bestScore;
+    int tmpScore;
+    bool isNewRecord;
+    Point originPoint;
+    Size visiableSize;
 };
 
-#endif /* StatusLayer_hpp */

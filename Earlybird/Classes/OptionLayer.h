@@ -22,7 +22,7 @@ public:
     
 };
 
-class OptionLayer:Layer{
+class OptionLayer:public Layer{
 public:
     OptionLayer();
     ~OptionLayer();

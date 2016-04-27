@@ -5,7 +5,7 @@
 //  Created by 谢从 on 16/4/13.
 //
 //
-
+#pragma once
 #include "cocos2d.h"
 #include "AtlasLoader.h"
 #include "time.h"

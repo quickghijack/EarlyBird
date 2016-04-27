@@ -43,6 +43,9 @@ bool GameLayer::init(){
         this->addChild(this->bird);
         
         //add ground
+//        auto background = BackgroundLayer::create();
+//        this->addChild(background);
+
         this->groundNode = Node::create();
         float landHeight = BackgroundLayer::getLandHeight();
         auto groundBody = PhysicsBody::create();

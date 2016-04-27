@@ -5,7 +5,7 @@
 //  Created by on 16/4/12.
 //
 //
-#pragma once
+
 #include "LoadingScene.h"
 #include "WelcomeScene.h"
 LoadingScene::LoadingScene(){};
@@ -18,18 +18,18 @@ bool LoadingScene::init(){
 
 void LoadingScene::onEnter(){
     //add backgroud to this scene
-    Sprite *background = Sprite::create("image/splash.png");
+    Sprite *background = Sprite::create("splash.png");
     
     Size visiableSize=Director::getInstance()->getVisibleSize();
     Point origin=Director::getInstance()->getVisibleOrigin();
     background->setPosition(origin.x+visiableSize.width/2,origin.y+visiableSize.height/2);
     this->addChild(background);
     
-    Director::getInstance()->getTextureCache()->addImageAsync("image/atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
+    Director::getInstance()->getTextureCache()->addImageAsync("atlas.png", CC_CALLBACK_1(LoadingScene::LoadingCallBack, this));
 };
 
 void LoadingScene::LoadingCallBack(cocos2d::Texture2D *texture){
-    AtlasLoader::getInstance()->loadAtlas("image/atlas.txt", texture);
+    AtlasLoader::getInstance()->loadAtlas("atlas.txt", texture);
     
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_die.ogg");
     SimpleAudioEngine::getInstance()->preloadEffect("sfx_hit.ogg");

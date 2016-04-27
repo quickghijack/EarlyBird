@@ -5,7 +5,7 @@
 //  Created by zhe on 16/4/17.
 //
 //
-
+#pragma once
 #ifndef UserRecord_hpp
 #define UserRecord_hpp
 
