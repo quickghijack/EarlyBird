@@ -53,8 +53,9 @@ typedef enum : uint8_t {
 
 class StatusDelegate{
 public:
-    StatusDelegate(){};
+    
     ~StatusDelegate(){};
+    StatusDelegate(){};
     virtual void onGameStart(void)=0;
     virtual void onGamePlaying(int score)=0;
     virtual void onGameEnd(int curSorce,int bestSorce)=0;

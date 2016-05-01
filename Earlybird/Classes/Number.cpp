@@ -16,7 +16,7 @@ bool NumberSeries::init(){
 };
 
 void NumberSeries::loadNumber(const char *fmt,int base){
-    for(int i=base;i<10;i++){
+    for(int i=base;i<10+base;i++){
         const char* fileName = String::createWithFormat(fmt,i)->getCString();
         auto frame=AtlasLoader::getInstance()->getSpriteFrameByName(fileName);
         numberSeries.pushBack(frame);
@@ -81,7 +81,7 @@ Node* Number::convert(const char *name, int number,Gravity gravity){
     
     auto numberZero = Sprite::createWithSpriteFrame(numbers->at(0));
     numberNode->setContentSize(Size(totalWidth,numberZero->getContentSize().width));
-    
+    //numberNode->addChild(numberZero);
     if (gravity==GRAVITY_CENTER) {
         float singleWidth = totalWidth / numberNode->getChildrenCount();
         int index = numberNode->getChildrenCount() / 2;

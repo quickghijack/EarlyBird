@@ -95,7 +95,7 @@ void StatusLayer::blinkFullScreen(){
 
 void StatusLayer::fadeInGameOver(){
     Sprite* gameOverSprite = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("text_game_over"));
-    gameOverSprite->setPosition(Point(originPoint.x+visiableSize.width,originPoint.y+visiableSize.height*2/3));
+    gameOverSprite->setPosition(Point(originPoint.x+visiableSize.width/2,originPoint.y+visiableSize.height*2/3));
     this->addChild(gameOverSprite);
     
     auto gameOverFadeIn = FadeIn::create(0.5f);
@@ -126,12 +126,12 @@ void StatusLayer::jumpToScrorePanel(){
         bestScoreSprite->addChild(medalSprite);
     }
     
-    auto scorePanelMoveTo = MoveTo::create(0.8f, Point(this->originPoint.x+visiableSize.width/2,this->originPoint.y+visiableSize.height-10.0f));
+    auto scorePanelMoveTo = MoveTo::create(0.8f, Point(this->originPoint.x+visiableSize.width/2,this->originPoint.y+visiableSize.height/2-10.0f));
     EaseExponentialOut* sineIn = EaseExponentialOut::create(scorePanelMoveTo);
     CallFunc* actionDone = CallFunc::create(CC_CALLBACK_0(StatusLayer::fadeInRestBtn, this));
     auto sequene = Sequence::createWithTwoActions(sineIn, actionDone);
-    scoreSprite->stopAllActions();
-    scoreSprite->runAction(sequene);
+    scorePanelSprite->stopAllActions();
+    scorePanelSprite->runAction(sequene);
     SimpleAudioEngine::getInstance()->playEffect("sfx_swooshing.ogg");
     
 }
@@ -143,7 +143,7 @@ void StatusLayer::fadeInRestBtn(){
     auto restartButton = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     auto restartActiveButton = Sprite::createWithSpriteFrame(AtlasLoader::getInstance()->getSpriteFrameByName("button_play"));
     restartActiveButton->setPositionY(-4);
-    auto menuItem = MenuItemSprite::create(restartButton, restartActiveButton, CC_CALLBACK_1(StatusLayer::menuRestartCallBack, this));
+    auto menuItem = MenuItemSprite::create(restartButton, restartActiveButton,NULL, CC_CALLBACK_1(StatusLayer::menuRestartCallBack, this));
     auto menu = Menu::create(menuItem, NULL);
     menu->setPosition(Point(this->originPoint.x + this->visiableSize.width / 2 - restartButton->getContentSize().width / 2, this->originPoint.y + this->visiableSize.height * 2 / 7 - 10.0f));
     tmpNode->addChild(menu);
@@ -230,6 +230,9 @@ string StatusLayer::getMedalName(int score){
 
 void StatusLayer::menuRestartCallBack(cocos2d::Ref *sender){
     SimpleAudioEngine::getInstance()->playEffect("sfx_swooshing.ogg");
+    //GameScene::~GameScene();
+    //auto scene1 =(GameScene*) this->getParent();
+    //scene1->restart();
     auto scene = GameScene::create();
     TransitionScene *transition = TransitionFade::create(1, scene);
     Director::getInstance()->replaceScene(transition);

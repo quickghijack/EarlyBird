@@ -37,6 +37,7 @@ bool GameLayer::init(){
         body->setLinearDamping(0.0f);
         body->setGravityEnable(false);
         
+        
         this->bird->setPhysicsBody(body);
         this->bird->setPosition(origin.x + visiableSize.width*1/3 - 5,origin.y + visiableSize.height/2 + 5);
         this->bird->idle();
