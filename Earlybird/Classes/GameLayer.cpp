@@ -14,6 +14,7 @@ GameLayer::~GameLayer(){};
 
 bool GameLayer::init(){
     if(Layer::init()){
+        
         Size visiableSize=Director::getInstance()->getVisibleSize();
         Point origin = Director::getInstance()->getVisibleOrigin();
         
@@ -21,8 +22,13 @@ bool GameLayer::init(){
         this->score=0;
         
         //add bird
+        if(this->bird!=NULL){
+            this->bird=NULL;
+        }
         this->bird=BirdSprite::getInstance();
+        
         this->bird->creatBird();
+        
         //physics config
         PhysicsBody *body = PhysicsBody::create();
         body->addShape(PhysicsShapeCircle::create(BIRD_RADIUS));
@@ -37,8 +43,9 @@ bool GameLayer::init(){
         body->setLinearDamping(0.0f);
         body->setGravityEnable(false);
         
-        
-        this->bird->setPhysicsBody(body);
+        if(this->bird->getPhysicsBody()==NULL){
+            this->bird->setPhysicsBody(body);
+        }
         this->bird->setPosition(origin.x + visiableSize.width*1/3 - 5,origin.y + visiableSize.height/2 + 5);
         this->bird->idle();
         this->addChild(this->bird);

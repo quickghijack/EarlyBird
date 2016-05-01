@@ -230,9 +230,10 @@ string StatusLayer::getMedalName(int score){
 
 void StatusLayer::menuRestartCallBack(cocos2d::Ref *sender){
     SimpleAudioEngine::getInstance()->playEffect("sfx_swooshing.ogg");
+    
     //GameScene::~GameScene();
-    //auto scene1 =(GameScene*) this->getParent();
-    //scene1->restart();
+    auto scene1 =(GameScene*) this->getParent();
+    scene1->restart();
     auto scene = GameScene::create();
     TransitionScene *transition = TransitionFade::create(1, scene);
     Director::getInstance()->replaceScene(transition);
